@@ -47,8 +47,11 @@ Business Impact:
 Early fault detection reduces losses, increases manufacturing throughput, and enables rapid action.
 
 🗂️ Project Structure
+
 text
+
 SENSORPROJECT/
+
 ├── artifacts/                    # Model artifacts, scaler, transformer, etc.
 ├── config/
 │   └── model.yaml                # Model and pipeline configuration
