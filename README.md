@@ -1,5 +1,9 @@
 🧠 Wafer Fault Detection Project
+
+
 🕹️ Overview
+
+
 Welcome to the Wafer Fault Detection project! This repository provides a robust, end-to-end machine learning pipeline for automatically detecting faulty wafers in semiconductor manufacturing using real sensor data. The main objective is to classify each wafer as Good (1) or Bad (-1) based on 590+ readings from the fabrication process.
 
 Goal: Predict wafer quality in real-time for higher production yield and lower waste.
