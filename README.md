@@ -46,43 +46,8 @@ Business Impact:
 
 Early fault detection reduces losses, increases manufacturing throughput, and enables rapid action.
 
-🗂️ Project Structure
 
-text
 
-SENSORPROJECT/
-
-├── artifacts/                    # Model artifacts, scaler, transformer, etc.
-├── config/
-│   └── model.yaml                # Model and pipeline configuration
-├── logs/                         # Logging and error tracking
-├── notebooks/
-│   └── wafer_23012020_041211.csv # Sample sensor data
-├── prediction_artifacts/
-│   └── test.csv                  # Data or artifacts for prediction runs
-├── predictions/
-│   └── prediction_file.csv       # Output predictions
-├── src/
-│   ├── components/
-│   │   ├── data_ingestion.py
-│   │   ├── data_transformation.py
-│   │   └── model_trainer.py
-│   ├── constant/
-│   ├── pipeline/
-│   │   ├── predict_pipeline.py
-│   │   └── train_pipeline.py
-│   ├── utils/
-│   │   ├── exception.py
-│   │   └── logger.py
-├── static/css/
-│   └── style.css                 # Styles for web UI
-├── templates/
-│   └── upload_file.html
-├── app.py                        # Flask web application
-├── upload_data.py                # Batch upload utility
-├── requirements.txt              # All dependencies
-├── setup.py                      # Build details
-└── README.md
 🌟 Features
 🔧 Modular & Clean Code: Easily extensible and production-ready Python codebase.
 
