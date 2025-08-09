@@ -1,162 +1,141 @@
-🧠 Wafer Fault Detection Project
+🛠️ Sensor Fault Detection Machine Learning Project
+📢 Overview
+This project implements an end-to-end Machine Learning pipeline for real-time wafer sensor fault detection.
+It uses automated data ingestion, preprocessing, model training & selection, and provides an interactive prediction interface via a Flask-based web app.
 
+The goal is to help manufacturers quickly determine whether wafers from sensor readings are faulty or normal, ensuring high-quality production and reducing defects.
 
-🕹️ Overview
+🚀 Features
+Upload Data for Prediction:
+Web interface to upload CSV sensor data and instantly get predictions.
 
+Complete ML Pipeline:
 
-Welcome to the Wafer Fault Detection project! This repository provides a robust, end-to-end machine learning pipeline for automatically detecting faulty wafers in semiconductor manufacturing using real sensor data. The main objective is to classify each wafer as Good (1) or Bad (-1) based on 590+ readings from the fabrication process.
+Data ingestion and validation
 
-Goal: Predict wafer quality in real-time for higher production yield and lower waste.
+Data cleaning, scaling, and feature engineering
 
-Type: Supervised Binary Classification
+Multiple model training & best model selection
 
-Tech: Python, Machine Learning, Flask, Clean Modular Architecture ⚙️
+Real-time prediction on uploaded data
 
-🧾 Table of Contents
-📋 Problem Statement
+Continual model retraining for improved accuracy
+
+Multiple Algorithms Tested: Logistic Regression, Random Forest, Gradient Boosting, Neural Networks
+
+Robust Model Evaluation: Precision, Recall, F1-score, and Confusion Matrix.
+
+📈 Machine Learning Approach
+Data Cleaning
+
+Remove outliers and noisy readings
+
+Normalize data for consistent scaling
+
+Handle missing values via imputation
+
+Feature Engineering
+
+Create derived features from raw sensor streams
+
+Select most relevant features using statistical methods or feature importance
+
+Model Training & Selection
+
+Train Logistic Regression, Random Forest, Gradient Boosting, and Neural Network models
+
+Compare using evaluation metrics
+
+Automatically select the best-performing model
+
+Evaluation Metrics
+
+Precision, Recall, F1-score, Accuracy
+
+Confusion Matrix to analyze classification results
+
+Real-time Prediction
+
+Upload any new CSV via a web form
+
+Instant prediction of wafer status (Faulty / Normal)
 
 🗂️ Project Structure
-
-🌟 Features
-
-🏷️ Data Details
-
-🏁 Setup and Installation
-
-🚦 How to Use
-
-🔬 Project Workflow
-
-📈 ML Approach
-
-🤝 Contributing
-
-📧 Contact
-
-🏆 Acknowledgments
-
-📋 Problem Statement
-Objective: Develop a machine learning model to predict whether a semiconductor wafer is "Good" or "Bad" based on the sensor readings collected during the fabrication process.
-
-Input: 590 sensor readings per wafer (Sensor-1, ..., Sensor-590)
-
-Output: “Good” (1) or “Bad” (-1)
-
-Business Impact:
-
-Early fault detection reduces losses, increases manufacturing throughput, and enables rapid action.
-
-
-
-🌟 Features
-🔧 Modular & Clean Code: Easily extensible and production-ready Python codebase.
-
-📊 Data Ingestion & Processing: Handles raw incoming CSV data, cleaning, scaling, and feature engineering.
-
-🏋️♂️ Model Training: Supports a variety of classifiers (Logistic Regression, Random Forest, Gradient Boosting, Neural Networks).
-
-🧪 Full ML Pipeline Automation: End-to-end automation from ingestion to deployment.
-
-🖥️ Real-Time Prediction: Predict wafer quality instantly via a web interface.
-
-📝 Robust Logging: Centralized, detailed logging and error handling.
-
-🔁 Continuous Learning: Supports feedback loops and retraining.
-
-☁️ Web Deployment: RESTful API via Flask (app.py) with custom HTML upload UI.
-
-🖌️ Customizable UI: Polished CSS for an attractive file upload experience.
-
-🏷️ Data Details
-File Format: CSV (Comma-Separated Values)
-
-Features: 590+ sensor readings per wafer (Sensor-1, Sensor-2, ..., Sensor-590)
-
-Target: Good (1) / Bad (-1)
-
-Example Row:
-
 text
-Wafer-801, 2968.33, 2476.58, ..., 1
-🏁 Setup and Installation
-1. Clone This Repo
+SENSORPROJECT/
+│
+├── src/
+│   ├── components/
+│   │   ├── data_ingestion.py
+│   │   ├── data_transformation.py
+│   │   ├── model_trainer.py
+│   ├── pipeline/
+│   │   ├── predict_pipeline.py
+│   │   ├── train_pipeline.py
+│   ├── utils/
+│   │   ├── exception.py
+│   │   ├── logger.py
+│   ├── constant/
+│   ├── static/
+│   │   ├── style.css
+│   ├── templates/
+│   │   ├── upload_file.html
+│   ├── app.py
+│   ├── upload_data.py
+│
+├── requirements.txt
+├── setup.py
+├── README.md
+└── ...
+💾 Installation & Setup
+Clone the Repository
+
 bash
-git clone https://github.com/yourgithub/wafer-fault-detection.git
-cd wafer-fault-detection
-2. Install Dependencies
+git clone https://github.com/yourusername/sensor-fault-detection.git
+cd sensor-fault-detection
+Install Dependencies
+
 bash
 pip install -r requirements.txt
-3. Setup Python Environment (Recommended)
-bash
-python -m venv venv
-source venv/bin/activate        # Windows: venv\Scripts\activate
-4. Configure Your Model
-Edit /config/model.yaml to change pipeline or training parameters.
-
-🚦 How to Use
-🎯 Train the Model
-bash
-python src/pipeline/train_pipeline.py
-🔮 Make Predictions (Batch or Web UI)
-For command-line batch prediction:
-
-bash
-python src/pipeline/predict_pipeline.py
-For web upload and instant prediction:
+Run the Flask Web App
 
 bash
 python app.py
-# Open http://127.0.0.1:5000/ in your browser
-⬆️ Upload Data for Prediction
-Use the provided web interface (templates/upload_file.html) to upload a CSV and see wafer predictions.
+Open http://localhost:5000 in a browser to access the upload form and start predictions.
 
-🔬 Project Workflow
-Data Ingestion: Reads and validates raw wafer sensor data.
+⚡ Key Results & Insights
+High detection accuracy reducing defective wafers from passing QA.
 
-Preprocessing: Cleans NaNs, scales features, and engineers new columns if needed.
+Automatic best model selection allowing optimized performance for any dataset.
 
-Model Training: Trains the model using multiple algorithms, selects the best based on evaluation.
+Continuous learning through retraining with new incoming data batches.
 
-Prediction: Applies the trained model to uploaded data for real-time wafer fault detection.
+Detailed error analysis using Confusion Matrix to identify common misclassifications.
 
-Continuous Update: Retrain with new production batches for higher accuracy.
+📍 Future Scope
+Real-time Streaming: Add live sensor data intake for continuous predictions.
 
-📈 ML Approach
-Cleaning: Removes outliers, normalizes values, imputes missing data.
+API Deployment: Expose predictions via a REST API for integration into other systems.
 
-Feature Engineering: Sophisticated derivation from raw sensor streams.
+Advanced Models: Integrate deep learning approaches like LSTM for time-series sensor data.
 
-Model Selection: Trains and compares Logistic Regression, Random Forest, Gradient Boosting, and Neural Network models.
+Cloud Deployment: Host on AWS/GCP/Azure for remote access and scalability.
 
-Evaluation: Uses Precision, Recall, F1, Confusion Matrix, etc., for assessment.
+Interactive Dashboards: Build visualization dashboards showing live predictions and stats.
 
-Deployment: REST API with Flask for real-time classification, easily portable for production.
+Data Security Enhancements: Encrypt sensitive sensor data in transit and storage.
 
-🤝 Contributing
-Contributions welcome!
+🙌 Acknowledgements
+Open-source community for Python, Flask, and ML libraries.
 
-🐛 Fix bugs
+Sensor dataset providers for wafer reading examples.
 
-🏋️♂️ Add new models
-
-📈 Improve evaluation or logging
-
-💡 Suggest or implement UI improvements
-
-Fork the repo, make your changes, and create a pull request. All feedback is appreciated!
+Developers of Scikit-learn, NumPy, Pandas, and Matplotlib for core tools.
 
 📧 Contact
-Made with ❤️ by Om
+For support, collaboration, or questions, reach out via email:
+omk99919@gmail.com
 
-Email:omk99919@gmail.com
-
-GitHub:https://github.com/omkumar23112003
-
-🏆 Acknowledgments
-Special thanks to the open-source & data science community.
-
-Kaggle and open datasets for inspiration.
-
-This project demonstrates a complete, scalable machine learning workflow for semiconductor wafer fault detection, maximizing reliability and production-grade deployment. Explore, contribute, and help build better chips!
-
-README last updated: Aug 01, 2025 — Om
+📜 License
+This project is licensed under the MIT License — you may use, modify, and distribute it with attribution.
+See the LICENSE file for details.
